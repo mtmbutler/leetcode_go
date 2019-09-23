@@ -15,6 +15,9 @@ func TestStrstr(t *testing.T) {
 		{"", "a", -1},
 		{"hello", "", 0},
 		{"", "", 0},
+		{"short", "needlelongerthanhaystack", -1},
+		{"hello", "hello", 0},
+		{"fhello", "hello", 1},
 	}
 	for _, c := range cases {
 		got := strStr(c.haystack, c.needle)
