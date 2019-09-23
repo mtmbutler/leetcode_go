@@ -9,23 +9,23 @@ type Case struct {
 }
 
 func TestStrstr(t *testing.T) {
-	// cases := [
-	// Case{"hello", "ll", 2}]
+	cases := []Case{
+		{"hello", "ll", 2},
+		{"aaaaa", "bba", -1},
+		{"", "a", -1},
+		{"hello", "", 0},
+		{"", "", 0},
+	}
 	for _, c := range cases {
 		got := strStr(c.haystack, c.needle)
-		if got != c.want {
+		if got != c.expected {
 			t.Errorf(
-				"strStr(%q, %q) == %q, want %q",
+				"strStr(%q, %q) == %d, want %d",
 				c.haystack,
 				c.needle,
+				got,
 				c.expected,
-				c.want,
 			)
 		}
-	}
-	got := strStr()
-	want := 1
-	if got != want {
-		t.Errorf("hello() == %q, want %q", got, want)
 	}
 }
