@@ -8,6 +8,8 @@ type Case struct {
 }
 
 var cases = []Case{
+	{[]string{}, 0},
+	{[]string{"foo"}, 1},
 	{[]string{"foo", "bar"}, 2},
 	{[]string{"gin", "zen", "gig", "msg"}, 2},
 }
